@@ -7,13 +7,20 @@ public class ModeExp {
         int x = 1;
         int power = b % m;
 
+        int cnt = 0;
+
         // Binary exponentiation algorithm
         while (n > 0) {
             if (n % 2 == 1) {
                 x = (x * power) % m;
             }
             power = (power * power) % m;
+
+            // Output the iteration
+            System.out.println("Bit ke-" + cnt + " (dari kanan) dari n-binary adalah " + n % 2 + ". Maka, x = " + x + " dan power = " + power);
+
             n = n / 2;
+            cnt++;
         }
         return x;
     }
